@@ -1,18 +1,21 @@
-import React, {useState} from 'react';
+import React, {MouseEvent, useState} from 'react';
 
 type AccordionType = {
     titleValue: string
     collapsed: boolean
+    onChange: () => void
 }
 
 export const Accordion = ({
                               titleValue,
-                              collapsed
+                              collapsed,
+                              onChange
                           }: AccordionType) => {
     const [editMode, setEditMode] = useState(collapsed)
 
-    function onCLickHandler() {
+    function onCLickHandler(e: MouseEvent<HTMLHeadingElement>) {
         setEditMode(!editMode)
+        onChange?.()
     }
 
     return (

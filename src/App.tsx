@@ -9,6 +9,7 @@ function App() {
             <Accordion
                 titleValue={'Menu'}
                 collapsed={false}
+                onChange={()=>{}}
             />
         </div>
     );
