@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css'
-import {Accordion} from "./Accordion";
+import {Accordion} from "./components/Accordion";
 
 function App() {
 

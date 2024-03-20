@@ -9,7 +9,7 @@ export const Accordion = ({
                               titleValue,
                               collapsed
                           }: AccordionType) => {
-    const [editMode, setEditMode] = useState(false)
+    const [editMode, setEditMode] = useState(collapsed)
 
     function onCLickHandler() {
         setEditMode(!editMode)
