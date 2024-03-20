@@ -1,5 +1,5 @@
 import {Meta, StoryObj} from '@storybook/react'
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useRef, useState} from 'react';
 import {Accordion} from "./Accordion";
 import {action} from '@storybook/addon-actions'
 
@@ -24,11 +24,11 @@ export const FirstStory: Story = {
 const onChangeHandler = action('onChange')
 
 export const CollapsedAccordion = () => {
-    return <Accordion onChange={onChangeHandler}   titleValue={'CollapsedAccordion'} collapsed={true}/>
+    return <Accordion onChange={onChangeHandler} titleValue={'CollapsedAccordion'} collapsed={true}/>
 }
 
 export const OpenedAccordion = () => {
-    return <Accordion  onChange={onChangeHandler}  titleValue={'OpenedAccordion'} collapsed={false}/>
+    return <Accordion onChange={onChangeHandler} titleValue={'OpenedAccordion'} collapsed={false}/>
 }
 
 export const DemoAccordion = () => {
@@ -40,11 +40,23 @@ export const DemoAccordion = () => {
 }
 
 export const DemoInput = () => {
-    const[value, setValue] = useState('123')
-    return <input value={value}
-                  onChange={(e: ChangeEvent<HTMLInputElement>)=> {
-                      setValue(e.currentTarget.value)
-                      console.log(e.currentTarget.value)
-                  }}
+    const [value, setValue] = useState('')
+    const inputRef = useRef<HTMLInputElement>(null)
+
+    const save = () => {
+        const el = inputRef.current as HTMLInputElement;
+        setValue(el.value)
+    }
+
+    return    <>
+    <input
+        // value={value}
+           ref={inputRef}
+                  // onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                  //     setValue(e.currentTarget.value)
+                  //     console.log(e.currentTarget.value)
+                  // }}
     />
+        <button onClick={save} >save</button> - actual value: {value}
+    </>
 }
