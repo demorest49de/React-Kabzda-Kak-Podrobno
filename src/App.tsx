@@ -8,27 +8,27 @@ export type ItemType = {
     value: any
 }
 
+export const items: ItemType[] = [
+    {
+        title: 'Moscow',
+        value: 1
+    },
+    {
+        title: 'Vancouver',
+        value: 2
+    },
+    {
+        title: 'Guadalajara',
+        value: 3
+    },
+    {
+        title: 'Palo-alto',
+        value: 4
+    },
+]
+
 function App() {
 
-
-    const items: ItemType[] = [
-        {
-            title: 'Moscow',
-            value: 1
-        },
-        {
-            title: 'Vancouver',
-            value: 2
-        },
-        {
-            title: 'Guadalajara',
-            value: 3
-        },
-        {
-            title: 'Palo-alto',
-            value: 4
-        },
-    ]
 
     return (
         <div className="App">

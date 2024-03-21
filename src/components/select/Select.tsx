@@ -26,12 +26,12 @@ export const Select = ({items}: SelectType) => {
 
     return (
         <div>
-            <select value={3} onChange={() => {
-            }}>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
+            {/*<select value={3} onChange={() => {*/}
+            {/*}}>*/}
+            {/*    <option value="2">2</option>*/}
+            {/*    <option value="3">3</option>*/}
+            {/*    <option value="4">4</option>*/}
+            {/*</select>*/}
 
             <div className={s.select}>
                 <div className={s.select__value} onClick={onClickSelect}>{value.title}</div>
