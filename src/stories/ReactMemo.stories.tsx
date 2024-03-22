@@ -21,7 +21,7 @@ export const ReactMemo = () => {
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(['dimich', 'valera', 'kayatja', 'natasha'])
 
-    const addUser = (value:  string) =>{
+    const addUser = () =>{
         setUsers([...users, 'Sveta ' + new Date().getTime()])
     }
 
