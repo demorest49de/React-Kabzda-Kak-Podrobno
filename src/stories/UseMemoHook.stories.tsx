@@ -13,13 +13,9 @@ export const UseMemoHookStories = () => {
     let resulta = 1;
     let resultb = 1;
 
-    function onchh(e: any) {
-
-    }
-
     for (let i = 1; i <= a; i++) {
         console.log(' a, resulta: ', a, resulta);
-        resulta = resulta * i;
+        resulta *= i;
     }
 
     console.log(' resulta: ', resulta);
@@ -30,7 +26,7 @@ export const UseMemoHookStories = () => {
 
     return (
         <div>
-            <input value={a} onChange={(e)=>setA(Number(e.currentTarget.value))}/>
+            <input value={a} onChange={(e) => setA(Number(e.currentTarget.value))}/>
             <input value={b} onChange={(e) => setB(+e.currentTarget.value)}/>
             <hr/>
             <p>Result for a: {resulta}</p>
